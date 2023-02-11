@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Háromszög</title>
+</head>
+<body>
+    <label for="oldal1">Kérem a háromszög első oldalhosszát:</label>
+    <input type="number" id="elso">
+    <br>
+    <label for="oldal2">Kérem a háromszög második oldalhosszát:</label>
+    <input type="number" id="masodik">
+    <br>
+    <label for="oldal3">Kérem a háromszög harmadik oldalhosszát:</label>
+    <input type="number" id="harmadik">
+    <br>
+    <button onclick="terKer()">Számolás</button>
+
+    <p id="kiir"></p>
+
+    <script>
+       
+
+        function terKer()
+        {
+            let egy=document.getElementById("elso").value
+            let ketto=document.getElementById("masodik").value
+            let harom=document.getElementById("harmadik").value
+            let a=parseFloat(egy)
+            let b=parseFloat(ketto)
+            let c=parseFloat(harom)
+
+
+            const kiir=document.getElementById("kiir")
+
+            let ker=a+b+c
+            let Heron=(a+b+c)/2
+            let ter=Math.sqrt(Heron*(Heron-a)*(Heron-b)*(Heron-c))
+            
+
+            kiir.innerHTML="Kerület = "+ker+" cm2,  Terület = "+ter+" cm3."
+        }
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tippmix</title>
+</head>
+<body>
+    <label for="text">Kérek egy egész számot 1 és 100 között:</label>
+    <input type="number" id="tipp">
+    
+    <button id="kuldes">Mehet</button>
+
+    <p id="kiiras"></p>
+
+    <script>
+        var tipp=document.getElementById("tipp").value
+        const gomb=document.getElementById("kuldes")
+        const kiiras=document.getElementById("kiiras")
+  
+        gomb.addEventListener("click", eredmeny)
+    
+        function veletlen()
+        {
+            console.log(veletlenegesz(1, 100));
+        }
+        function veletlenegesz(min, max)
+        {
+            return Math.trunc(Math.random() * (max - min + 1)) + min
+        }
+        function eredmeny()
+        {
+            let b = Math.trunc(Math.random() * (100 - 1 + 1 ))+1;
+            let a = tipp
+
+            if(a<b)
+            {
+                kiiras.innerHTML="A tippje kissebb, mint a kitalálandó szám!"
+            }
+            if(a>b)
+            {
+                kiiras.innerHTML="A tippje nagyobb, mint a kitalálandó szám!"
+            }
+            else
+            {
+                kiiras.innerHTML="Eltalálta a számot!"
+            }
+        }
+        function ujszam()
+        {
+            
+        }
+
+
+        console.log("A kitalálandó szám:")
+        veletlen()
+    </script>
+</body>
+</html>
